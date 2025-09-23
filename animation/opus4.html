@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .animation-container {
+            width: 90%;
+            max-width: 800px;
+            height: 60vh;
+            min-height: 400px;
+            background-color: #ffffff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a);
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .animation-container {
+                width: 100%;
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .ball {
+                width: 40px;
+                height: 40px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bouncing Ball Animation</h1>
+    
+    <div class="controls">
+        <button id="startBtn" onclick="startAnimation()">Start Animation</button>
+        <button id="stopBtn" onclick="stopAnimation()" disabled>Stop Animation</button>
+        <button id="resetBtn" onclick="resetAnimation()">Reset Position</button>
+    </div>
+    
+    <div class="animation-container" id="container">
+        <div class="ball" id="ball"></div>
+    </div>
+    
+    <div class="status" id="status">Animation: Gestoppt</div>
+
+    <script>
+        // Globale Variablen
+        let animationId = null;
+        let ball = document.getElementById('ball');
+        let container = document.getElementById('container');
+        let startBtn = document.getElementById('startBtn');
+        let stopBtn = document.getElementById('stopBtn');
+        let resetBtn = document.getElementById('resetBtn');
+        let status = document.getElementById('status');
+
+        // Ball-Position und Geschwindigkeit
+        let ballData = {
+            x: 50,
+            y: 50,
+            vx: 5,
+            vy: 3,
+            gravity: 0.5,
+            dampening: 0.9,
+            radius: 25
+        };
+
+        // Initiale Position setzen
+        resetAnimation();
+
+        function startAnimation() {
+            if (animationId) return;
+            
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            status.textContent = "Animation: Läuft";
+            
+            animate();
+        }
+
+        function stopAnimation() {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+            
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            status.textContent = "Animation: Gestoppt";
+        }
+
+        function resetAnimation() {
+            stopAnimation();
+            
+            // Ball in die Mitte setzen
+            let containerRect = container.getBoundingClientRect();
+            ballData.x = containerRect.width / 2;
+            ballData.y = 50;
+            ballData.vx = 5;
+            ballData.vy = 3;
+            
+            updateBallPosition();
+            status.textContent = "Animation: Zurückgesetzt";
+        }
+
+        function updateBallPosition() {
+            ball.style.left = (ballData.x - ballData.radius) + 'px';
+            ball.style.top = (ballData.y - ballData.radius) + 'px';
+        }
+
+        function animate() {
+            let containerRect = container.getBoundingClientRect();
+            let maxX = containerRect.width;
+            let maxY = containerRect.height;
+            
+            // Schwerkraft anwenden
+            ballData.vy += ballData.gravity;
+            
+            // Position aktualisieren
+            ballData.x += ballData.vx;
+            ballData.y += ballData.vy;
+            
+            // Kollision mit Wänden
+            if (ballData.x + ballData.radius > maxX) {
+                ballData.x = maxX - ballData.radius;
+                ballData.vx *= -ballData.dampening;
+            } else if (ballData.x - ballData.radius < 0) {
+                ballData.x = ballData.radius;
+                ballData.vx *= -ballData.dampening;
+            }
+            
+            // Kollision mit Boden und Decke
+            if (ballData.y + ballData.radius > maxY) {
+                ballData.y = maxY - ballData.radius;
+                ballData.vy *= -ballData.dampening;
+                
+                // Kleine Geschwindigkeiten stoppen (um ewiges Hüpfen zu vermeiden)
+                if (Math.abs(ballData.vy) < 1) {
+                    ballData.vy = 0;
+                }
+            } else if (ballData.y - ballData.radius < 0) {
+                ballData.y = ballData.radius;
+                ballData.vy *= -ballData.dampening;
+            }
+            
+            // Ball-Position aktualisieren
+            updateBallPosition();
+            
+            // Nächsten Frame anfordern
+            animationId = requestAnimationFrame(animate);
+        }
+
+        // Responsive Anpassung bei Fenstergröße-Änderung
+        window.addEventListener('resize', function() {
+            let containerRect = container.getBoundingClientRect();
+            
+            // Ball innerhalb der neuen Grenzen halten
+            if (ballData.x + ballData.radius > containerRect.width) {
+                ballData.x = containerRect.width - ballData.radius;
+            }
+            if (ballData.y + ballData.radius > containerRect.height) {
+                ballData.y = containerRect.height - ballData.radius;
+            }
+            
+            updateBallPosition();
+        });
+    </script>
+</body>
+</html>

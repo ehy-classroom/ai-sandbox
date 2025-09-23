@@ -1,0 +1,115 @@
+<mxfile host="65bd71144e">
+    <diagram name="Bowmayster Sitemap" id="sitemap-bowmayster-a-01">
+        <mxGraphModel dx="522" dy="1059" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="homepage" value="bowmayster.de&#xa;Homepage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="80" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="projekte" value="Projekte&#xa;/projekte/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="220" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="partner" value="Die Partner&#xa;/die-partner/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="220" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="kontakt" value="Kontakt&#xa;/kontakt/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="220" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="windy-city" value="Windy City Tower&#xa;/windy-city-tower/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="360" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="zukunftspavillon" value="Zukunftspavillon&#xa;der ETH&#xa;/zukunftspavillon-der-eth/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="360" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="kulturquartier" value="Kulturquartier&#xa;Am Spreeufer&#xa;/kulturquartier-am-spreeufer/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="360" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="leonard-bow" value="Leonard Bow&#xa;(Partner Detail)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="360" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="stefan-mayster" value="Stefan Mayster&#xa;(Partner Detail)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="590" y="360" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="contact-form" value="Kontaktformular&#xa;(Embedded)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="360" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="imprint" value="Impressum&#xa;(Footer Link)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="500" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="enno-hyttrek" value="Enno Hyttrek&#xa;(Creator Link)&#xa;ennohyttrek.de" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="500" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="philosophie" value="Philosophie&#xa;(Section)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="80" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="international" value="International&#xa;(Section)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="120" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="nachhaltigkeit" value="Nachhaltigkeit&#xa;(Section)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="80" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="leistungen" value="Leistungen&#xa;(Section)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="120" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge1" parent="1" source="homepage" target="projekte" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge2" parent="1" source="homepage" target="partner" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge3" parent="1" source="homepage" target="kontakt" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge4" parent="1" source="projekte" target="windy-city" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge5" parent="1" source="projekte" target="zukunftspavillon" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge6" parent="1" source="projekte" target="kulturquartier" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge7" parent="1" source="partner" target="leonard-bow" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge8" parent="1" source="partner" target="stefan-mayster" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge9" parent="1" source="kontakt" target="contact-form" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge10" style="dashed=1;strokeColor=#999999;" parent="1" source="homepage" target="imprint" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge11" style="dashed=1;strokeColor=#999999;" parent="1" source="homepage" target="enno-hyttrek" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-title" value="Legende" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="60" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-homepage" value="Homepage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="90" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-main" value="Hauptseiten" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="125" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-projects" value="Projekte" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="90" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-partners" value="Partner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="125" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-forms" value="Formulare" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="160" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-footer" value="Footer Links" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="160" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="site-info" value="Bowmayster.de Sitemap&#xa;Fiktive Architektur-Website&#xa;Erstellt von: Enno Hyttrek&#xa;Stand: September 2025" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="60" width="200" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

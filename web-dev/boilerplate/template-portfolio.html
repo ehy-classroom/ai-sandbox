@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+Boilerplate HTML5 KI 
+Template Portfolio
+Optimiert für Portfolio-Seiten mit Projektgalerie, Filter und Detail-Modals
+-->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website Titel</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>Website Titel</h1>
+            </div>
+        </header>
+
+        <nav>
+            <ul class="container">
+                <li><a href="../index.html">Hub</a></li>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+            </ul>
+        </nav>
+
+        <div class="wrapper main-wrapper">
+            <div class="container">
+                <!-- Portfolio Hero -->
+                <section class="portfolio-hero">
+                    <div class="hero-content">
+                        <h1>Mein Portfolio</h1>
+                        <p class="hero-description">Eine Sammlung meiner besten Arbeiten und Projekte aus den Bereichen Webentwicklung, Design und digitale Innovation.</p>
+                    </div>
+                    <div class="portfolio-stats">
+                        <div class="stat">
+                            <span class="number">50+</span>
+                            <span class="label">Projekte</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">5</span>
+                            <span class="label">Jahre</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">30+</span>
+                            <span class="label">Kunden</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Filter Navigation -->
+                <section class="portfolio-filters">
+                    <h2>Kategorien</h2>
+                    <nav class="filter-nav">
+                        <button class="filter-btn active" data-filter="all">Alle Projekte</button>
+                        <button class="filter-btn" data-filter="web">Webentwicklung</button>
+                        <button class="filter-btn" data-filter="design">Design</button>
+                        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                        <button class="filter-btn" data-filter="branding">Branding</button>
+                    </nav>
+                </section>
+
+                <!-- Portfolio Grid -->
+                <section class="portfolio-grid">
+                    <!-- Web Development Projects -->
+                    <article class="portfolio-item" data-category="web">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="E-Commerce Platform">
+                            <div class="project-overlay">
+                                <h3>E-Commerce Platform</h3>
+                                <p>React • Node.js • MongoDB</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">💻 Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p class="project-category">Webentwicklung</p>
+                            <p class="project-description">Vollständige E-Commerce-Lösung mit Warenkorb, Zahlungsintegration und Admin-Panel.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item" data-category="web">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="SaaS Dashboard">
+                            <div class="project-overlay">
+                                <h3>SaaS Dashboard</h3>
+                                <p>Vue.js • Laravel • MySQL</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">💻 Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>SaaS Dashboard</h3>
+                            <p class="project-category">Webentwicklung</p>
+                            <p class="project-description">Analytisches Dashboard für SaaS-Unternehmen mit Echtzeit-Datenvisualisierung.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Design Projects -->
+                    <article class="portfolio-item" data-category="design">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Corporate Website Redesign">
+                            <div class="project-overlay">
+                                <h3>Corporate Redesign</h3>
+                                <p>UI/UX Design • Figma</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">🎨 Design</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Corporate Website Redesign</h3>
+                            <p class="project-category">Design</p>
+                            <p class="project-description">Komplette Neugestaltung einer Unternehmenswebsite mit Fokus auf User Experience.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Adobe XD</span>
+                                <span class="tech-tag">Prototyping</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Mobile Projects -->
+                    <article class="portfolio-item" data-category="mobile">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Fitness Tracker App">
+                            <div class="project-overlay">
+                                <h3>Fitness Tracker</h3>
+                                <p>React Native • Firebase</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">📱 App Store</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Fitness Tracker App</h3>
+                            <p class="project-category">Mobile App</p>
+                            <p class="project-description">Cross-Platform Fitness-App mit Workout-Tracking und sozialen Features.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Branding Projects -->
+                    <article class="portfolio-item" data-category="branding">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Startup Brand Identity">
+                            <div class="project-overlay">
+                                <h3>Brand Identity</h3>
+                                <p>Logo • Style Guide • Assets</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">🎯 Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Startup Brand Identity</h3>
+                            <p class="project-category">Branding</p>
+                            <p class="project-description">Komplette Markenidentität für ein Tech-Startup inkl. Logo, Farben und Typografie.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Illustrator</span>
+                                <span class="tech-tag">Photoshop</span>
+                                <span class="tech-tag">InDesign</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item" data-category="web design">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Portfolio Website">
+                            <div class="project-overlay">
+                                <h3>Portfolio Website</h3>
+                                <p>HTML5 • CSS3 • JavaScript</p>
+                                <div class="project-actions">
+                                    <a href="#" class="btn-view">👁️ Ansehen</a>
+                                    <a href="#" class="btn-code">💻 Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Artist Portfolio Website</h3>
+                            <p class="project-category">Webentwicklung & Design</p>
+                            <p class="project-description">Responsive Portfolio-Website für einen Künstler mit Galerie und Kontaktformular.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="skills-section">
+                    <h2>Technologien & Tools</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Vue.js</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Design</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe XD</span>
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Illustrator</span>
+                                <span class="skill-tag">Sketch</span>
+                                <span class="skill-tag">InVision</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact CTA -->
+                <section class="portfolio-cta">
+                    <div class="cta-content">
+                        <h2>Lassen Sie uns zusammenarbeiten</h2>
+                        <p>Haben Sie ein spannendes Projekt? Ich helfe Ihnen gerne dabei, Ihre Ideen zum Leben zu erwecken.</p>
+                        <div class="cta-actions">
+                            <a href="#" class="btn-primary">Projekt besprechen</a>
+                            <a href="#" class="btn-secondary">CV herunterladen</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>Footer Information</p>
+                <p>&copy; YYYY Author</p>
+            </div>
+        </footer>
+    </body>
+
+</html>

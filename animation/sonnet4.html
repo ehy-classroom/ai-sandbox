@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonnet4 - Bouncing Ball Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .animation-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: none;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 0 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .info {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .animation-container {
+                height: 300px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+                margin: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .animation-container {
+                height: 250px;
+            }
+
+            .ball {
+                width: 40px;
+                height: 40px;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bouncing Ball Animation</h1>
+        
+        <div class="animation-container" id="animationContainer">
+            <div class="ball" id="ball"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn">Animation starten</button>
+            <button id="stopBtn" disabled>Animation stoppen</button>
+            <button id="resetBtn">Position zurücksetzen</button>
+        </div>
+        
+        <div class="info">
+            <p>Klicken Sie auf "Animation starten" um die springende Ball-Animation zu beginnen.</p>
+        </div>
+    </div>
+
+    <script>
+        class BouncingBall {
+            constructor() {
+                this.ball = document.getElementById('ball');
+                this.container = document.getElementById('animationContainer');
+                this.startBtn = document.getElementById('startBtn');
+                this.stopBtn = document.getElementById('stopBtn');
+                this.resetBtn = document.getElementById('resetBtn');
+                
+                this.isAnimating = false;
+                this.animationId = null;
+                
+                // Ball position and velocity
+                this.x = 25; // Start position X
+                this.y = 25; // Start position Y
+                this.vx = 3; // Velocity X
+                this.vy = 2; // Velocity Y
+                
+                // Ball dimensions
+                this.ballSize = 50;
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.updateBallPosition();
+                this.updateContainerSize();
+                
+                // Update container size on window resize
+                window.addEventListener('resize', () => {
+                    this.updateContainerSize();
+                });
+            }
+            
+            setupEventListeners() {
+                this.startBtn.addEventListener('click', () => this.startAnimation());
+                this.stopBtn.addEventListener('click', () => this.stopAnimation());
+                this.resetBtn.addEventListener('click', () => this.resetBall());
+            }
+            
+            updateContainerSize() {
+                const rect = this.container.getBoundingClientRect();
+                this.containerWidth = rect.width;
+                this.containerHeight = rect.height;
+                
+                // Update ball size for mobile
+                if (window.innerWidth <= 480) {
+                    this.ballSize = 40;
+                    this.ball.style.width = '40px';
+                    this.ball.style.height = '40px';
+                } else {
+                    this.ballSize = 50;
+                    this.ball.style.width = '50px';
+                    this.ball.style.height = '50px';
+                }
+            }
+            
+            startAnimation() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.startBtn.disabled = true;
+                this.stopBtn.disabled = false;
+                
+                this.animate();
+            }
+            
+            stopAnimation() {
+                this.isAnimating = false;
+                this.startBtn.disabled = false;
+                this.stopBtn.disabled = true;
+                
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+            }
+            
+            resetBall() {
+                this.stopAnimation();
+                this.x = 25;
+                this.y = 25;
+                this.vx = 3;
+                this.vy = 2;
+                this.updateBallPosition();
+            }
+            
+            animate() {
+                if (!this.isAnimating) return;
+                
+                // Update position
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // Bounce off walls
+                if (this.x <= 0 || this.x >= this.containerWidth - this.ballSize) {
+                    this.vx = -this.vx;
+                    this.x = Math.max(0, Math.min(this.x, this.containerWidth - this.ballSize));
+                }
+                
+                if (this.y <= 0 || this.y >= this.containerHeight - this.ballSize) {
+                    this.vy = -this.vy;
+                    this.y = Math.max(0, Math.min(this.y, this.containerHeight - this.ballSize));
+                }
+                
+                this.updateBallPosition();
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+            
+            updateBallPosition() {
+                this.ball.style.left = this.x + 'px';
+                this.ball.style.top = this.y + 'px';
+            }
+        }
+        
+        // Initialize the bouncing ball when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new BouncingBall();
+        });
+    </script>
+</body>
+</html>

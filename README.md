@@ -1,4 +1,7 @@
-# ai-sandbox
+
+# KI Sandbox
+
+Version: 0.0.1
 
 ## Ziel dieses Repositories
 
@@ -19,9 +22,16 @@ Dieses Projekt dient als Sandbox und Testumgebung für den praktischen Einsatz u
 
 ## Struktur
 
-- **benchmarks/**: Beispielprojekte und UI-Demos zum Testen von Vorschlägen
-- **public/**: Beispiel-Webseiten für UI- und Frontend-Experimente
-- **sandbox-01/**: Platz für eigene Experimente und Tests
+- **animation/**: Beispielprojekte und UI-Demos zu Animationen (z.B. opus4.html, sonnet4.html)
+- **basic-html-css/**: Grundlegende HTML/CSS-Beispiele und Boilerplates
+  - **boilerplate/**: Minimalbeispiele für HTML5 und CSS (index.html, style.css)
+- **.vscode/**: Editor-Konfigurationen (settings.json)
+
+Nicht mehr vorhanden/umbenannt:
+
+- benchmarks/ → jetzt animation/
+- public/ → jetzt basic-html-css/boilerplate/
+- sandbox-01/ (entfernt)
 
 ## Mitmachen & Erweiterung
 
@@ -33,5 +43,4 @@ Dieses Repository ist offen für Erweiterungen. Eigene Tests, neue KI-Modelle od
 - Für jeden Assistenten/Modell gibt es eigene Testfälle und Erfahrungsberichte.
 
 ---
-**Letzte Aktualisierung:** 21.09.2025
-
+**Letzte Aktualisierung:** 21.09.2025 (Struktur aktualisiert)
